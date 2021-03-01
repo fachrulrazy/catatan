@@ -1,2 +1,23 @@
 https://docs.microsoft.com/id-id/windows/wsl/install-manual
 untuk install linux ubuntu subsystem
+
+ap-southeast-1 Singapore zone to configure AWS CLI
+// cheking available images 
+aws ec2 describe-images --filters "Name=description,Values=Amazon Linux AMI * x86_64 HVM GP2" --query 'Images[*].[creationDate, Description,ImageId]' --output text | sort -k 1 | tail
+
+ aws ec2 run-instances --instance-type t2.micro --key-name fachrulrazi --security-group-ids sg-093e2dbcb37ebd12e --image-id ami-ed838091
+ 
+ 
+ aws ec2 describe-images --filters "Name=description,Values=Amazon Linux AMI * x86_64 HVM GP2" --query 'Images[*].[CreationDate, Description, ImageId]' --output text | sort -k 1 | tail
+ ubnode1@DESKTOP-VJOFCPO:~$ aws ec2 describe-images --filters "Name=description,Values=Amazon Linux AMI * x86_64 HVM GP2" --query 'Images[*].[CreationDate, Description, ImageId]' --output text | sort -k 1 | tail
+2018-01-10T19:01:02.000Z        Amazon Linux AMI 2017.09.1.20180108 x86_64 HVM GP2      ami-f18ffc8d
+2018-01-15T19:18:54.000Z        Amazon Linux AMI 2017.09.1.20180115 x86_64 HVM GP2      ami-68097514
+2018-01-18T23:06:50.000Z        Amazon Linux AMI 2017.09.1.20171120 x86_64 HVM GP2      ami-f3ec938f
+2018-03-07T07:05:51.000Z        Amazon Linux AMI 2017.09.1-testlongids.20180307 x86_64 HVM GP2  ami-03854b53876021c4b
+2018-03-07T07:05:51.000Z        Amazon Linux AMI 2017.09.1.20180307 x86_64 HVM GP2      ami-e2adf99e
+2018-04-13T00:31:51.000Z        Amazon Linux AMI 2018.03.0.20180412 x86_64 HVM GP2      ami-64260718
+2018-05-08T18:10:52.000Z        Amazon Linux AMI 2018.03.0.20180508 x86_64 HVM GP2      ami-de90a5a2
+2018-06-22T22:26:54.000Z        Amazon Linux AMI 2018.03.0.20180622 x86_64 HVM GP2      ami-ed838091
+2018-08-11T02:29:54.000Z        Amazon Linux AMI 2018.03.0.20180811 x86_64 HVM GP2      ami-08569b978cc4dfa10
+2018-11-08T00:27:45.000Z        Amazon Linux AMI 2018.03.0.20180811 x86_64 HVM GP2      ami-012ca484e0d7c6015
+
