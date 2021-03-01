@@ -18,6 +18,13 @@ aws ec2 describe-images --filters "Name=description,Values=Amazon Linux AMI * x8
 2018-04-13T00:31:51.000Z        Amazon Linux AMI 2018.03.0.20180412 x86_64 HVM GP2      ami-64260718
 2018-05-08T18:10:52.000Z        Amazon Linux AMI 2018.03.0.20180508 x86_64 HVM GP2      ami-de90a5a2
 2018-06-22T22:26:54.000Z        Amazon Linux AMI 2018.03.0.20180622 x86_64 HVM GP2      ami-ed838091
-2018-08-11T02:29:54.000Z        Amazon Linux AMI 2018.03.0.20180811 x86_64 HVM GP2      ami-08569b978cc4dfa10
-2018-11-08T00:27:45.000Z        Amazon Linux AMI 2018.03.0.20180811 x86_64 HVM GP2      ami-012ca484e0d7c6015
 
+instance ID : i-01629a7512d053d1b
+aws ec2 describe-instance-status --instance-ids i-01629a7512d053d1b
+
+aws ec2 describe-instances --instance-ids i-01629a7512d053d1b --query "Reservations[*].Instances[*].PublicDnsName"
+ [
+        "ec2-54-255-164-4.ap-southeast-1.compute.amazonaws.com"
+ ]
+
+ ssh -i fachrulrazi.pem ec2-user@ec2-54-255-164-4.ap-southeast-1.compute.amazonaws.com
