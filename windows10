@@ -27,4 +27,4 @@ aws ec2 describe-instances --instance-ids i-01629a7512d053d1b --query "Reservati
         "ec2-54-255-164-4.ap-southeast-1.compute.amazonaws.com"
  ]
 
- ssh -i fachrulrazi.pem ec2-user@ec2-54-255-164-4.ap-southeast-1.compute.amazonaws.com
+ssh -i fachrulrazi.pem ec2-user@ec2-54-255-164-4.ap-southeast-1.compute.amazonaws.com
