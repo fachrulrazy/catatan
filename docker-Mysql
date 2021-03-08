@@ -1,0 +1,6 @@
+docker run --name=mk-mysql -p3306:3306 -v mysql-volume:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql/mysql-server:5.6
+docker exec -it mk-mysql bash
+ update mysql.user set host = '%' where user='root';
+ docker run --name mk-phpmyadmin -v phpmyadmin-volume:/etc/phpmyadmin/config.user.inc.php --link mk-mysql:db -p 82:80 -d phpmyadmin/phpmyadmin
+ 
+//check WSL IP, that is the the real HOST IP, can connect using that e.g: http://192.168.224.1:82/index.php?route=/sql&server=1&db=api_security_db&table=USERS&pos=0
