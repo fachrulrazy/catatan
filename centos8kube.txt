@@ -1,10 +1,4 @@
-Sign-in URL: https://341326365683.signin.aws.amazon.com/console
-User name: centopsmanager
 
-Your password will be provided separately by your AWS account administrator. During your first sign-in, you must change your password.
-
-
-341326365683
 
 
 AMI eks aws : ami-0bd286d04f2938239
